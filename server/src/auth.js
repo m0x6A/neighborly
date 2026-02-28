@@ -1,6 +1,10 @@
 const jwt = require('jsonwebtoken');
 
 const JWT_SECRET = process.env.JWT_SECRET || 'neighborly-dev-secret-change-in-production';
+
+if (!process.env.JWT_SECRET) {
+  console.warn('WARNING: JWT_SECRET is not set. Using insecure default. Set JWT_SECRET in production.');
+}
 const JWT_EXPIRY = '7d';
 
 function signToken(payload) {

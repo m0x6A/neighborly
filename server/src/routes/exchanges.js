@@ -77,8 +77,8 @@ router.patch('/:id/status', requireAuth, (req, res) => {
   }
 
   db.prepare(
-    "UPDATE exchanges SET status = ?, updated_at = datetime('now') WHERE id = ?"
-  ).run(status, exchange.id);
+    'UPDATE exchanges SET status = ?, updated_at = ? WHERE id = ?'
+  ).run(status, new Date().toISOString(), exchange.id);
 
   const updated = db.prepare('SELECT * FROM exchanges WHERE id = ?').get(exchange.id);
   return res.json(updated);
