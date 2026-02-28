@@ -1,0 +1,13 @@
+{
+  "name": "neighborly",
+  "version": "1.0.0",
+  "description": "A neighbor skill-exchange platform built on the See One, Do One, Teach One concept",
+  "private": true,
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "test": "cd server && npm test",
+    "build": "cd client && npm run build",
+    "start": "cd server && npm start"
+  }
+}
